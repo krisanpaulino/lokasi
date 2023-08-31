@@ -10,7 +10,7 @@ class Auth extends BaseController
     public function index()
     {
         if (session()->has('admin_log')) {
-            return redirect()->to(session()->get('user')->user_type);
+            return redirect()->to('lokasi');
         }
         // dd(session('user'));
         return view('login');
