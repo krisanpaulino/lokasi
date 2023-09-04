@@ -40,4 +40,24 @@ class Lokasi extends BaseController
 
         return view('lokasi/detail', $data);
     }
+
+    public function maps()
+    {
+        $user_token = $this->request->getPost('user_token');
+        // dd($user_token);
+        $model = new LokasiModel();
+        $lokasi = $model->byUser($user_token);
+
+        $model = new UserModel();
+        $model->where('user_token', $user_token);
+        $user = $model->first();
+
+        $data = [
+            'title' => 'Peta user',
+            'user' => $user,
+            'lokasi' => $lokasi
+        ];
+
+        return view('lokasi/maps', $data);
+    }
 }

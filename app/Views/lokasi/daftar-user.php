@@ -38,6 +38,8 @@
                                     <td><?= $u->user_nama ?></td>
                                     <td>
                                         <form target="_blank" action="<?= base_url('lokasi') ?>" method="post"><input type="hidden" name="user_token" value="<?= $u->user_token ?>"><button type="submit" class="badge bg-info border">Lihat Lokasi</button></form>
+
+                                        <form target="_blank" action="<?= base_url('maps') ?>" method="post"><input type="hidden" name="user_token" value="<?= $u->user_token ?>"><button type="submit" class="badge bg-primary border">Lihat Peta</button></form>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

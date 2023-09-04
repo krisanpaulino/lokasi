@@ -16,3 +16,4 @@ $routes->post('login', 'Auth::login');
 //Logged In Routes
 $routes->get('lokasi', 'Lokasi::index', ['filter' => 'admin']);
 $routes->post('lokasi', 'Lokasi::detailLokasi', ['filter' => 'admin']);
+$routes->post('maps', 'Lokasi::maps', ['filter' => 'admin']);
